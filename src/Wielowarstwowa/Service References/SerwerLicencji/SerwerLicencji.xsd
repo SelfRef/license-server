@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SerwerLicencji" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SerwerLicencji" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:simpleType name="WiadomoscZwrotna">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Pomyslnie" />
+      <xs:enumeration value="Niepomyslnie" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WiadomoscZwrotna" nillable="true" type="tns:WiadomoscZwrotna" />
+  <xs:complexType name="ArrayOfLicencja">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Licencja" nillable="true" type="tns:Licencja" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLicencja" nillable="true" type="tns:ArrayOfLicencja" />
+  <xs:complexType name="Licencja">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataWygasniecia" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ProgramID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Licencja" nillable="true" type="tns:Licencja" />
+  <xs:complexType name="ArrayOfUzytkownik">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Uzytkownik" nillable="true" type="tns:Uzytkownik" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUzytkownik" nillable="true" type="tns:ArrayOfUzytkownik" />
+  <xs:complexType name="Uzytkownik">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Imie" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LicencjeID" nillable="true" type="q1:ArrayOfint" />
+      <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nazwisko" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Uprawnienia" type="tns:Uprawnienia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Uzytkownik" nillable="true" type="tns:Uzytkownik" />
+  <xs:simpleType name="Uprawnienia">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Anonim" />
+      <xs:enumeration value="Uzytkownik" />
+      <xs:enumeration value="Administrator" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Uprawnienia" nillable="true" type="tns:Uprawnienia" />
+  <xs:complexType name="ArrayOfProgram">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Program" nillable="true" type="tns:Program" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProgram" nillable="true" type="tns:ArrayOfProgram" />
+  <xs:complexType name="Program">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Nazwa" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Program" nillable="true" type="tns:Program" />
+  <xs:simpleType name="UsuwanyTyp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Uzytkownik" />
+      <xs:enumeration value="Program" />
+      <xs:enumeration value="Licencja" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UsuwanyTyp" nillable="true" type="tns:UsuwanyTyp" />
+</xs:schema>

@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SerwerLicencji" />
+  <xs:element name="Logowanie">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="haslo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogowanieResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SerwerLicencji" minOccurs="0" name="LogowanieResult" type="q1:WiadomoscZwrotna" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PobierzMojeLicencje">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PobierzMojeLicencjeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SerwerLicencji" minOccurs="0" name="PobierzMojeLicencjeResult" nillable="true" type="q2:ArrayOfLicencja" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PobierzUzytkownikow">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PobierzUzytkownikowResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SerwerLicencji" minOccurs="0" name="PobierzUzytkownikowResult" nillable="true" type="q3:ArrayOfUzytkownik" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PobierzMojeDane">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PobierzMojeDaneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SerwerLicencji" minOccurs="0" name="PobierzMojeDaneResult" nillable="true" type="q4:Uzytkownik" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PobierzLicencje">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uzytkownik" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PobierzLicencjeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SerwerLicencji" minOccurs="0" name="PobierzLicencjeResult" nillable="true" type="q5:ArrayOfLicencja" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PobierzProgramy">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PobierzProgramyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SerwerLicencji" minOccurs="0" name="PobierzProgramyResult" nillable="true" type="q6:ArrayOfProgram" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PobierzMojeProgramy">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PobierzMojeProgramyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SerwerLicencji" minOccurs="0" name="PobierzMojeProgramyResult" nillable="true" type="q7:ArrayOfProgram" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajUzytkownika">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="imie" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nazwisko" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="haslo" nillable="true" type="xs:string" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SerwerLicencji" minOccurs="0" name="uprawnienia" type="q8:Uprawnienia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajUzytkownikaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SerwerLicencji" minOccurs="0" name="DodajUzytkownikaResult" type="q9:WiadomoscZwrotna" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajProgram">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nazwa" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajProgramResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SerwerLicencji" minOccurs="0" name="DodajProgramResult" type="q10:WiadomoscZwrotna" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajLicencje">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uzytkownikId" type="xs:int" />
+        <xs:element minOccurs="0" name="programId" type="xs:int" />
+        <xs:element minOccurs="0" name="dataWygasniecia" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajLicencjeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SerwerLicencji" minOccurs="0" name="DodajLicencjeResult" type="q11:WiadomoscZwrotna" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UsunPozycje">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SerwerLicencji" minOccurs="0" name="typ" type="q12:UsuwanyTyp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UsunPozycjeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SerwerLicencji" minOccurs="0" name="UsunPozycjeResult" type="q13:WiadomoscZwrotna" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

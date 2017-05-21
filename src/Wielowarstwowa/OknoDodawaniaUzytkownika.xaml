@@ -1,0 +1,30 @@
+﻿<Window x:Class="Wielowarstwowa.OknoDodawaniaUzytkownika"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wielowarstwowa"
+        mc:Ignorable="d"
+        Title="Dodaj nowego użytkownika" Height="191.406" Width="396.876" ResizeMode="NoResize" WindowStyle="ToolWindow">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,10">
+            <Button x:Name="button" Content="Dodaj" Width="75" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,10,0" Click="button_Click" IsDefault="True"/>
+            <Button x:Name="button1" Content="Anuluj" Width="75" Click="button1_Click" IsCancel="True"/>
+        </StackPanel>
+        <Label x:Name="label" Content="Imię:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Nazwisko:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Login:" HorizontalAlignment="Left" Margin="197,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label3" Content="Hasło:" HorizontalAlignment="Left" Margin="197,41,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label4" Content="Uprawnienia:" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="imieBox" HorizontalAlignment="Left" Height="23" Margin="73,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119"/>
+        <TextBox x:Name="nazwiskoBox" HorizontalAlignment="Left" Height="23" Margin="73,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119"/>
+        <TextBox x:Name="loginBox" HorizontalAlignment="Left" Height="23" Margin="244,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="hasloBox" HorizontalAlignment="Left" Margin="244,46,0,0" VerticalAlignment="Top" Width="120" Height="21"/>
+        <ComboBox x:Name="uprawnieniaBox" HorizontalAlignment="Left" Margin="94,78,0,0" VerticalAlignment="Top" Width="270"/>
+
+    </Grid>
+</Window>

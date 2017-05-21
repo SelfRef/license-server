@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Licencje" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="DefaultEndpoint_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256>
+                </sp:Basic256>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict>
+                </sp:Strict>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/SerwerLicencji" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILicencje_Logowanie_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logowanie" />
+  </wsdl:message>
+  <wsdl:message name="ILicencje_Logowanie_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogowanieResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicencje_PobierzMojeLicencje_InputMessage">
+    <wsdl:part name="parameters" element="tns:PobierzMojeLicencje" />
+  </wsdl:message>
+  <wsdl:message name="ILicencje_PobierzMojeLicencje_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PobierzMojeLicencjeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicencje_PobierzUzytkownikow_InputMessage">
+    <wsdl:part name="parameters" element="tns:PobierzUzytkownikow" />
+  </wsdl:message>
+  <wsdl:message name="ILicencje_PobierzUzytkownikow_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PobierzUzytkownikowResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicencje_PobierzMojeDane_InputMessage">
+    <wsdl:part name="parameters" element="tns:PobierzMojeDane" />
+  </wsdl:message>
+  <wsdl:message name="ILicencje_PobierzMojeDane_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PobierzMojeDaneResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicencje_PobierzLicencje_InputMessage">
+    <wsdl:part name="parameters" element="tns:PobierzLicencje" />
+  </wsdl:message>
+  <wsdl:message name="ILicencje_PobierzLicencje_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PobierzLicencjeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicencje_PobierzProgramy_InputMessage">
+    <wsdl:part name="parameters" element="tns:PobierzProgramy" />
+  </wsdl:message>
+  <wsdl:message name="ILicencje_PobierzProgramy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PobierzProgramyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicencje_PobierzMojeProgramy_InputMessage">
+    <wsdl:part name="parameters" element="tns:PobierzMojeProgramy" />
+  </wsdl:message>
+  <wsdl:message name="ILicencje_PobierzMojeProgramy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PobierzMojeProgramyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicencje_DodajUzytkownika_InputMessage">
+    <wsdl:part name="parameters" element="tns:DodajUzytkownika" />
+  </wsdl:message>
+  <wsdl:message name="ILicencje_DodajUzytkownika_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DodajUzytkownikaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicencje_DodajProgram_InputMessage">
+    <wsdl:part name="parameters" element="tns:DodajProgram" />
+  </wsdl:message>
+  <wsdl:message name="ILicencje_DodajProgram_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DodajProgramResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicencje_DodajLicencje_InputMessage">
+    <wsdl:part name="parameters" element="tns:DodajLicencje" />
+  </wsdl:message>
+  <wsdl:message name="ILicencje_DodajLicencje_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DodajLicencjeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicencje_UsunPozycje_InputMessage">
+    <wsdl:part name="parameters" element="tns:UsunPozycje" />
+  </wsdl:message>
+  <wsdl:message name="ILicencje_UsunPozycje_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UsunPozycjeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ILicencje">
+    <wsdl:operation name="Logowanie">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicencje/Logowanie" message="tns:ILicencje_Logowanie_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicencje/LogowanieResponse" message="tns:ILicencje_Logowanie_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PobierzMojeLicencje">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicencje/PobierzMojeLicencje" message="tns:ILicencje_PobierzMojeLicencje_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicencje/PobierzMojeLicencjeResponse" message="tns:ILicencje_PobierzMojeLicencje_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PobierzUzytkownikow">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicencje/PobierzUzytkownikow" message="tns:ILicencje_PobierzUzytkownikow_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicencje/PobierzUzytkownikowResponse" message="tns:ILicencje_PobierzUzytkownikow_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PobierzMojeDane">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicencje/PobierzMojeDane" message="tns:ILicencje_PobierzMojeDane_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicencje/PobierzMojeDaneResponse" message="tns:ILicencje_PobierzMojeDane_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PobierzLicencje">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicencje/PobierzLicencje" message="tns:ILicencje_PobierzLicencje_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicencje/PobierzLicencjeResponse" message="tns:ILicencje_PobierzLicencje_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PobierzProgramy">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicencje/PobierzProgramy" message="tns:ILicencje_PobierzProgramy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicencje/PobierzProgramyResponse" message="tns:ILicencje_PobierzProgramy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PobierzMojeProgramy">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicencje/PobierzMojeProgramy" message="tns:ILicencje_PobierzMojeProgramy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicencje/PobierzMojeProgramyResponse" message="tns:ILicencje_PobierzMojeProgramy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DodajUzytkownika">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicencje/DodajUzytkownika" message="tns:ILicencje_DodajUzytkownika_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicencje/DodajUzytkownikaResponse" message="tns:ILicencje_DodajUzytkownika_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DodajProgram">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicencje/DodajProgram" message="tns:ILicencje_DodajProgram_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicencje/DodajProgramResponse" message="tns:ILicencje_DodajProgram_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DodajLicencje">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicencje/DodajLicencje" message="tns:ILicencje_DodajLicencje_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicencje/DodajLicencjeResponse" message="tns:ILicencje_DodajLicencje_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UsunPozycje">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicencje/UsunPozycje" message="tns:ILicencje_UsunPozycje_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicencje/UsunPozycjeResponse" message="tns:ILicencje_UsunPozycje_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DefaultEndpoint" type="tns:ILicencje">
+    <wsp:PolicyReference URI="#DefaultEndpoint_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="Logowanie">
+      <soap12:operation soapAction="http://tempuri.org/ILicencje/Logowanie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PobierzMojeLicencje">
+      <soap12:operation soapAction="http://tempuri.org/ILicencje/PobierzMojeLicencje" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PobierzUzytkownikow">
+      <soap12:operation soapAction="http://tempuri.org/ILicencje/PobierzUzytkownikow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PobierzMojeDane">
+      <soap12:operation soapAction="http://tempuri.org/ILicencje/PobierzMojeDane" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PobierzLicencje">
+      <soap12:operation soapAction="http://tempuri.org/ILicencje/PobierzLicencje" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PobierzProgramy">
+      <soap12:operation soapAction="http://tempuri.org/ILicencje/PobierzProgramy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PobierzMojeProgramy">
+      <soap12:operation soapAction="http://tempuri.org/ILicencje/PobierzMojeProgramy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodajUzytkownika">
+      <soap12:operation soapAction="http://tempuri.org/ILicencje/DodajUzytkownika" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodajProgram">
+      <soap12:operation soapAction="http://tempuri.org/ILicencje/DodajProgram" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodajLicencje">
+      <soap12:operation soapAction="http://tempuri.org/ILicencje/DodajLicencje" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsunPozycje">
+      <soap12:operation soapAction="http://tempuri.org/ILicencje/UsunPozycje" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Licencje">
+    <wsdl:port name="DefaultEndpoint" binding="tns:DefaultEndpoint">
+      <soap12:address location="net.tcp://localhost:5555/Licencje" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:5555/Licencje</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>TM-MSI\timsm</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

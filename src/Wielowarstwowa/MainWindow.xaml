@@ -1,0 +1,50 @@
+﻿<Window x:Class="Wielowarstwowa.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wielowarstwowa"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="471.374" Width="781.783" MinWidth="580" MinHeight="380">
+    <Window.Resources>
+        <DataTemplate x:Key="listToStringTemplate">
+            <TextBlock DataContext="{Binding LicencjeID, Converter={StaticResource ListToStringConverter}}"></TextBlock>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="126"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <GroupBox x:Name="groupBox" Header="Logowanie">
+            <Grid>
+                <Label Content="Login:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,39,0,0"/>
+                <Label Content="Hasło:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,70,0,0"/>
+                <TextBox x:Name="loginTextBox" HorizontalAlignment="Left" Height="23" Margin="58,42,0,0" TextWrapping="Wrap" Text="jk" VerticalAlignment="Top" Width="119"/>
+                <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="58,73,0,0" VerticalAlignment="Top" Width="119" Height="23" Password="jk"/>
+                <Button x:Name="conBtn" Content="Połącz" HorizontalAlignment="Left" Margin="190,42,0,0" VerticalAlignment="Top" Width="117" Height="54" IsDefault="True" Click="conBtn_Click"/>
+                <TextBlock x:Name="userInfoBlock" Margin="320,0,10,10" TextWrapping="Wrap" Text="Zaloguj się, aby zobaczyć więcej informacji." Height="60" VerticalAlignment="Bottom"></TextBlock>
+                <Label Content="Adres:   net.tcp://" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="addressTextBox" HorizontalAlignment="Left" Height="23" Margin="108,14,0,0" TextWrapping="NoWrap" Text="localhost:5555/Licencje" VerticalAlignment="Top" Width="199"/>
+                <Label x:Name="label" Content="Informacje o użytkowniku:" HorizontalAlignment="Left" Margin="320,8,0,0" VerticalAlignment="Top"/>
+            </Grid>
+        </GroupBox>
+        <DataGrid x:Name="dataGrid" Grid.Row="1" IsReadOnly="True"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,5">
+            <Label Content="Widok:"/>
+            <ComboBox x:Name="typWidoku" SelectedIndex="4" Margin="4,0,0,0" IsEnabled="False">
+                <ComboBoxItem x:Name="widokUzytkownicy" Content="Użytkownicy"/>
+                <ComboBoxItem x:Name="widokProgramy" Content="Programy"/>
+                <ComboBoxItem x:Name="widokMojeProgramy" Content="Moje programy"/>
+                <ComboBoxItem x:Name="widokLicencje" Content="Licencje"/>
+                <ComboBoxItem x:Name="widokMojeLicencje" Content="Moje licencje"/>
+            </ComboBox>
+                <Button x:Name="odswiezBtn" Content="Odśwież" Width="75" Margin="9,0,0,0" IsEnabled="False" Click="odswiezBtn_Click"/>
+            <Button x:Name="dodajNowy" Content="Dodaj pozycję" Margin="10,0,0,0" Width="100" Click="dodajNowy_Click" IsEnabled="False"/>
+            <Button x:Name="usun" Content="Usuń pozycję o ID:" Margin="10,0,0,0" Width="119" Click="usun_Click" IsEnabled="False"/>
+            <TextBox x:Name="usunId" Width="60" Margin="10,0,0,0" IsEnabled="False" />
+        </StackPanel>
+
+    </Grid>
+</Window>
