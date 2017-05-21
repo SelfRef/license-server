@@ -4,7 +4,7 @@
 * @AuthorSite: [TimsManter.NET](http://timsmanter.net/)
 * @CreateDate: 2015-12
 * @AbandonDate: 2016-11
-* @Editor: Visual Studio Code
+* @Editor: Visual Studio Community 2015
 * @Language: C#
 * @Framework: .NET Framework
 * @Locale: pl_PL
