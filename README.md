@@ -8,7 +8,7 @@
 * @Language: C#
 * @Framework: .NET Framework
 * @Locale: pl_PL
-* @License: MIT
+* @License: [MIT](LICENSE.md)
 * @Status: Alpha | Abandoned | Sample
 
 ## Overview
