@@ -13,6 +13,16 @@
 
 ## Overview
 
+<!-- TOC -->
+
+- [Overview](#overview)
+- [Binary](#binary)
+- [Screenshots](#screenshots)
+  - [Client](#client)
+  - [Server](#server)
+
+<!-- /TOC -->
+
 LicenseServer is simple license management system with client-server architecture in mind. The purpose of this software is to serve central system with licenses database and provide desktop client application with ability to view, create, modify and remove licenses as well as users and registered software.
 
 Client app allows users with different provileges to view own licenses. Administrators can add software, link software license to user and change various aspects like expiration time.
