@@ -13,15 +13,7 @@
 
 ## Overview
 
-<!-- TOC -->
-
-- [Overview](#overview)
-- [Binary](#binary)
-- [Screenshots](#screenshots)
-  - [Client](#client)
-  - [Server](#server)
-
-<!-- /TOC -->
+<!-- TOC -->autoauto- [Overview](#overview)auto- [Quick Start](#quick-start)auto- [Screenshots](#screenshots)auto  - [More](#more)autoauto<!-- /TOC -->
 
 LicenseServer is simple license management system with client-server architecture in mind. The purpose of this software is to serve central system with licenses database and provide desktop client application with ability to view, create, modify and remove licenses as well as users and registered software.
 
@@ -29,23 +21,23 @@ Client app allows users with different provileges to view own licenses. Administ
 
 The core of communication is build using SOAP transport layer protocol and Windows Communication Foundation framework - a part of .NET Framework on Windows platform. Client-side applications takes the best from Windows Presentation Foundation framework.
 
-## Binary
+## Quick Start
 
-There are compiled binary files for Windows OS in [bin](bin/) folder.
-
-> Note: Of course it will be necessary to install .NET Framework 4.5 to run it.
+1. Open project in Visual Studio.
+2. Right click on the Solution in Solution Explorer and click "Restore NuGet Packages".
+3. Right click again and choose "Set StartUp Projects...".
+4. Set action to "Start" for "KonsolaLicencji" and "Wielowarstwowa" so you can just start both server and client with a single click.
+5. Run the project in Visual Studio.
 
 ## Screenshots
 
-### Client
-
-|||
+| Client Window | Server Console |
 --- | ---
-![Client Window Connected](docs/screenshots/client_window_connected.png) | ![Client Window Connected](docs/screenshots/client_window_licenses.png)
+![Manager Window](docs/screenshots/manager.png) | ![Server Console](docs/screenshots/console.png)
 ![Client Window Connected](docs/screenshots/client_window_software.png) | ![Client Window Connected](docs/screenshots/client_window_users.png)
 
-### Server
+### More
 
-|||
---- | ---
-![Console Window Connected](docs/screenshots/console_window.png) | ![CLient Window Connected](docs/screenshots/console_window2.png)
+||||
+--- | --- | ---
+![User List](docs/screenshots/manager_users.png) | ![Software List](docs/screenshots/manager_software.png) | ![License List](docs/screenshots/manager_licenses.png)
