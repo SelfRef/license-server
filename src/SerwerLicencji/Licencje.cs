@@ -47,7 +47,7 @@ namespace SerwerLicencji
         {
             if (UprawnieniaUzytkownika == Uprawnienia.Administrator && BazaDanych.Uzytkownicy.All(u => u.Login != login))
             {
-                Uzytkownik uzytkownik = new Uzytkownik() { Imie = imie, Nazwisko = nazwisko, Login = login, Haslo = CalculateMD5Hash(haslo), Uprawnienia = uprawnienia, LicencjeID = new BindingList<int>() };
+                Uzytkownik uzytkownik = new Uzytkownik() { Imie = imie, Nazwisko = nazwisko, Login = login, Haslo = Md5.CalculateMD5Hash(haslo), Uprawnienia = uprawnienia, LicencjeID = new BindingList<int>() };
                 uzytkownik.ID = BazaDanych.Uzytkownicy.LastOrDefault()?.ID + 1 ?? 0;
                 BazaDanych.Uzytkownicy.Add(uzytkownik);
                 return WiadomoscZwrotna.Pomyslnie;
@@ -57,10 +57,10 @@ namespace SerwerLicencji
 
         public WiadomoscZwrotna Logowanie(string login, string haslo)
         {
-            string hash = CalculateMD5Hash(haslo);
-            if (BazaDanych.Uzytkownicy.Any(u => u.Login == login && u.Haslo == CalculateMD5Hash(haslo)))
+            string hash = Md5.CalculateMD5Hash(haslo);
+            if (BazaDanych.Uzytkownicy.Any(u => u.Login == login && u.Haslo == Md5.CalculateMD5Hash(haslo)))
             {
-                Uzytkownik uzytkownik = BazaDanych.Uzytkownicy.Single(u => u.Login == login && u.Haslo == CalculateMD5Hash(haslo));
+                Uzytkownik uzytkownik = BazaDanych.Uzytkownicy.Single(u => u.Login == login && u.Haslo == Md5.CalculateMD5Hash(haslo));
                 UprawnieniaUzytkownika = uzytkownik.Uprawnienia;
                 IdUzytkownika = uzytkownik.ID;
                 return WiadomoscZwrotna.Pomyslnie;
@@ -162,22 +162,6 @@ namespace SerwerLicencji
                 }
             }
             return WiadomoscZwrotna.Niepomyslnie;
-        }
-
-        public string CalculateMD5Hash(string input)
-        {
-            // step 1, calculate MD5 hash from input
-            var md5 = System.Security.Cryptography.MD5.Create();
-            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
-            byte[] hash = md5.ComputeHash(inputBytes);
-
-            // step 2, convert byte array to hex string
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < hash.Length; i++)
-            {
-                sb.Append(hash[i].ToString("X2"));
-            }
-            return sb.ToString();
         }
     }
 

@@ -65,6 +65,7 @@
     <Compile Include="BazaDanych.cs" />
     <Compile Include="ILicencje.cs" />
     <Compile Include="Licencje.cs" />
+    <Compile Include="Md5.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
