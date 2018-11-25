@@ -6,7 +6,7 @@
 * @Editor: Visual Studio Community 2015+
 * @Language: C#
 * @Framework: .NET Framework
-* @Locale: pl_PL
+* @Locale: en_US
 * @License: [MIT](LICENSE.md)
 * @Status: Alpha | Abandoned | Sample
 
