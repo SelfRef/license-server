@@ -1,5 +1,4 @@
-# LicenseServer
-
+* @Title: LicenseServer
 * @Author: TimsManter
 * @AuthorSite: [TimsManter.NET](http://timsmanter.net/)
 * @CreateDate: 2015-12
@@ -11,9 +10,12 @@
 * @License: [MIT](LICENSE.md)
 * @Status: Alpha | Abandoned | Sample
 
-## Overview
+# Overview
 
-<!-- TOC -->autoauto- [Overview](#overview)auto- [Quick Start](#quick-start)auto- [Screenshots](#screenshots)auto  - [More](#more)autoauto<!-- /TOC -->
+- [Overview](#overview)
+- [Quick Start](#quick-start)
+- [Screenshots](#screenshots)
+  - [More](#more)
 
 LicenseServer is simple license management system with client-server architecture in mind. The purpose of this software is to serve central system with licenses database and provide desktop client application with ability to view, create, modify and remove licenses as well as users and registered software.
 
@@ -21,7 +23,7 @@ Client app allows users with different provileges to view own licenses. Administ
 
 The core of communication is build using SOAP transport layer protocol and Windows Communication Foundation framework - a part of .NET Framework on Windows platform. Client-side applications takes the best from Windows Presentation Foundation framework.
 
-## Quick Start
+# Quick Start
 
 1. Open project in Visual Studio.
 2. Right click on the Solution in Solution Explorer and click "Restore NuGet Packages".
@@ -29,14 +31,14 @@ The core of communication is build using SOAP transport layer protocol and Windo
 4. Set action to "Start" for "KonsolaLicencji" and "Wielowarstwowa" so you can just start both server and client with a single click.
 5. Run the project in Visual Studio.
 
-## Screenshots
+# Screenshots
 
 | Client Window | Server Console |
 --- | ---
 ![Manager Window](docs/screenshots/manager.png) | ![Server Console](docs/screenshots/console.png)
 ![Client Window Connected](docs/screenshots/client_window_software.png) | ![Client Window Connected](docs/screenshots/client_window_users.png)
 
-### More
+## More
 
 ||||
 --- | --- | ---
