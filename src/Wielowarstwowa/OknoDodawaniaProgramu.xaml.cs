@@ -34,7 +34,7 @@ namespace Wielowarstwowa
         {
             if (nazwaBox.Text.Trim() == "")
             {
-                MessageBox.Show("Nazwa nie może być pusta.", "Ostrzeżenie", MessageBoxButton.OK,
+                MessageBox.Show("Name cannot be empty.", "Warning", MessageBoxButton.OK,
                     MessageBoxImage.Exclamation);
             }
             else

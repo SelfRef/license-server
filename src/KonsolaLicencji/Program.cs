@@ -16,22 +16,22 @@ namespace KonsolaLicencji
         {
             using (ServiceHost host = new ServiceHost(typeof(Licencje)))
             {
-                Console.WriteLine("Aktualny status serwera: " + host.State.ToString());
-                Console.WriteLine("Rozpoczynam nasłuchiwanie na adresie: " + host.BaseAddresses.First().AbsoluteUri);
+                Console.WriteLine("Current server state: " + host.State.ToString());
+                Console.WriteLine("Listening on the address: " + host.BaseAddresses.First().AbsoluteUri);
                 if (host.State != CommunicationState.Opened)
                 {
                     try
                     {
                         host.Open();
-                        Console.WriteLine("Serwer został uruchomiony pomyślnie");
+                        Console.WriteLine("Server is running");
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine("Napotkano błąd, treść: " + e.Message);
+                        Console.WriteLine("An error occurred: " + e.Message);
                     }
                 }
-                else Console.WriteLine("Serwer jest już uruchomiony");
-                Console.WriteLine("Aktualny status serwera: " + host.State.ToString());
+                else Console.WriteLine("Server is already running");
+                Console.WriteLine("Current server state: " + host.State.ToString());
                 WyswietlPolecenia();
                 if (host.State == CommunicationState.Opened)
                 {
@@ -39,24 +39,24 @@ namespace KonsolaLicencji
                     {
                         switch (Console.ReadLine())
                         {
-                            case "/p":
+                            case "/?":
                                 WyswietlPolecenia();
                                 break;
-                            case "/da":
+                            case "/addadmin":
                                 DodajUzytkownika(Uprawnienia.Administrator);
                                 break;
-                            case "/du":
+                            case "/adduser":
                                 DodajUzytkownika(Uprawnienia.Uzytkownik);
                                 break;
-                            case "/wu":
+                            case "/listallusers":
                                 WyswietlUzytkownikow();
                                 break;
-                            case "/w":
+                            case "/q":
                                 host.Close();
                                 Environment.Exit(0);
                                 break;
                             default:
-                                Console.WriteLine("Nieznane polecenie");
+                                Console.WriteLine("Unknown command");
                                 break;
                         }
                     }
@@ -66,38 +66,38 @@ namespace KonsolaLicencji
 
         private static void WyswietlPolecenia()
         {
-            Console.WriteLine("Wybierz opcję:\n" +
-                              "/p - aby uzystkać listę wszystkich poleceń\n" +
-                              "/da - aby dodać nowego administratora do bazy danych\n" +
-                              "/du - aby dodać nowego użytkownika do bazy danych\n" +
-                              "/wu = aby wyświetlić listę wszystkich użytkowników\n" +
-                              "/w - aby zamknąć serwer i wyjść z aplikacji");
+            Console.WriteLine("Type command:\n" +
+                              "/addadmin - add new administrator to database\n" +
+                              "/adduser - add new user to database\n" +
+                              "/listallusers - print list of all users in database\n" +
+                              "/q - quit server\n" +
+                              "/? - print list of commands again");
         }
 
         private static void DodajUzytkownika(Uprawnienia uprawnienia)
         {
             Uzytkownik uzytkownik = new Uzytkownik();
-            Console.Write("Imię: ");
+            Console.Write("Firstname: ");
             uzytkownik.Imie = Console.ReadLine();
-            Console.Write("Nazwisko: ");
+            Console.Write("Lastname: ");
             uzytkownik.Nazwisko = Console.ReadLine();
             Console.Write("Login: ");
             uzytkownik.Login = Console.ReadLine();
-            Console.Write("Hasło: ");
-            uzytkownik.Haslo = Console.ReadLine();
+            Console.Write("Password: ");
+            uzytkownik.Haslo = Md5.CalculateMD5Hash(Console.ReadLine());
             uzytkownik.LicencjeID = new BindingList<int>();
             uzytkownik.Uprawnienia = uprawnienia;
             uzytkownik.ID = BazaDanych.Uzytkownicy.LastOrDefault()?.ID + 1 ?? 0;
             BazaDanych.Uzytkownicy.Add(uzytkownik);
-            Console.WriteLine("Pomyślnie dodano nowego administratora");
+            Console.WriteLine("Successfully added a new user");
         }
 
         private static void WyswietlUzytkownikow()
         {
-            Console.WriteLine("Lista użytkowników:");
+            Console.WriteLine("User list:");
             if (BazaDanych.Uzytkownicy.Count == 0)
             {
-                Console.WriteLine("Lista użytkowników jest pusta");
+                Console.WriteLine("<list is empty>");
             }
             else
             {

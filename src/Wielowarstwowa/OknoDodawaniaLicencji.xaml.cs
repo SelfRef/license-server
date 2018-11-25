@@ -36,7 +36,7 @@ namespace Wielowarstwowa
         {
             if (uzytkownikBox.SelectedIndex == -1 || programBox.SelectedIndex == -1 || data.SelectedDate == null)
             {
-                MessageBox.Show("Nie wszystkie pola są uzupełnione.", "Ostrzeżenie", MessageBoxButton.OK,
+                MessageBox.Show("Not all fields are filled.", "Warning", MessageBoxButton.OK,
                     MessageBoxImage.Exclamation);
             }
             else

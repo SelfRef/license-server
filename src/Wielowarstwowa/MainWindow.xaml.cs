@@ -39,7 +39,7 @@ namespace Wielowarstwowa
         {
             if (loginTextBox.Text.Trim() == "")
             {
-                MessageBox.Show("Najpierw wpisz login!", "Błąd logowania", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Type login first!", "Logging error", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else if (channel != null )
             {
@@ -56,7 +56,7 @@ namespace Wielowarstwowa
                 channel = factory.CreateChannel();
                 if (channel.State == CommunicationState.Opened)
                 {
-                    MessageBox.Show("Połączenie jest już nawiązane.", "Informacja", MessageBoxButton.OK,
+                    MessageBox.Show("Client is already connected.", "Informantion", MessageBoxButton.OK,
                         MessageBoxImage.Information);
                 }
                 else
@@ -69,7 +69,7 @@ namespace Wielowarstwowa
                         switch (channel.Logowanie(loginTextBox.Text, passwordBox.Password))
                         {
                             case WiadomoscZwrotna.Niepomyslnie:
-                                MessageBox.Show("Logowanie zakończone niepowodzeniem.", "Bład logowania",
+                                MessageBox.Show("Logging failed.", "Logging error",
                                     MessageBoxButton.OK, MessageBoxImage.Error);
                                 channel.Close();
                                 Wylogowany();
@@ -83,7 +83,7 @@ namespace Wielowarstwowa
                     }
                     catch (Exception f)
                     {
-                        MessageBox.Show("Nie mozna nawiązać połączenia, powód: " + f.Message, "Błąd połączenia", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("Cannot establish connection, reason: " + f.Message, "Connection error", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
 
                 }
@@ -93,12 +93,12 @@ namespace Wielowarstwowa
 
         private void Zalogowany()
         {
-            conBtn.Content = "Rozłącz";
+            conBtn.Content = "Disconnect";
             addressTextBox.IsEnabled = false;
             loginTextBox.IsEnabled = false;
             passwordBox.IsEnabled = false;
             Uzytkownik ja = channel.PobierzMojeDane();
-            userInfoBlock.Text = $"{ja.Imie} {ja.Nazwisko}\nUprawnienia: {ja.Uprawnienia}";
+            userInfoBlock.Text = $"{ja.Imie} {ja.Nazwisko}\nPrivileges: {ja.Uprawnienia}";
 
             typWidoku.IsEnabled = true;
             odswiezBtn.IsEnabled = true;
@@ -150,12 +150,12 @@ namespace Wielowarstwowa
 
         private void Wylogowany()
         {
-            conBtn.Content = "Połącz";
+            conBtn.Content = "Connect";
             channel = null;
             addressTextBox.IsEnabled = true;
             loginTextBox.IsEnabled = true;
             passwordBox.IsEnabled = true;
-            userInfoBlock.Text = "Zaloguj się, aby zobaczyć więcej informacji.";
+            userInfoBlock.Text = "Login to see more user information.";
 
             typWidoku.IsEnabled = false;
             odswiezBtn.IsEnabled = false;
@@ -215,11 +215,11 @@ namespace Wielowarstwowa
                         WiadomoscZwrotna.Pomyslnie)
                     {
                         odswiezDane();
-                        MessageBox.Show("Pomyślnie dodano nowego użytkownika.", "Informacja", MessageBoxButton.OK,
+                        MessageBox.Show("New user added successfully.", "Information", MessageBoxButton.OK,
                             MessageBoxImage.Information);
                     }
                     else
-                        MessageBox.Show("Dodawanie użytkownika zakończone niepowodzeniem.", "Błąd", MessageBoxButton.OK,
+                        MessageBox.Show("Adding a new user failed.", "Error", MessageBoxButton.OK,
                             MessageBoxImage.Error);
                 }
                 
@@ -235,11 +235,11 @@ namespace Wielowarstwowa
                         WiadomoscZwrotna.Pomyslnie)
                     {
                         odswiezDane();
-                        MessageBox.Show("Pomyślnie dodano nowy program.", "Informacja", MessageBoxButton.OK,
+                        MessageBox.Show("New software added successfully.", "Information", MessageBoxButton.OK,
                             MessageBoxImage.Information);
                     }
                     else
-                        MessageBox.Show("Dodawanie programu zakończone niepowodzeniem.", "Błąd", MessageBoxButton.OK,
+                        MessageBox.Show("Adding a new software failed.", "Error", MessageBoxButton.OK,
                             MessageBoxImage.Error);
                 }
                 
@@ -261,15 +261,15 @@ namespace Wielowarstwowa
                         if (channel.DodajLicencje(dodajLicencje.IdUzytkownika.Value, dodajLicencje.IdProgramu.Value, dodajLicencje.data.SelectedDate.Value) == WiadomoscZwrotna.Pomyslnie)
                         {
                             odswiezDane();
-                            MessageBox.Show("Pomyślnie dodano nową licencję.", "Informacja", MessageBoxButton.OK,
+                            MessageBox.Show("New license added successfully.", "Information", MessageBoxButton.OK,
                                 MessageBoxImage.Information);
                         }
                         else
-                            MessageBox.Show("Dodawanie licencji zakończone niepowodzeniem.", "Błąd", MessageBoxButton.OK,
+                            MessageBox.Show("Adding a new license failed.", "Error", MessageBoxButton.OK,
                                 MessageBoxImage.Error);
                     }
                     else
-                        MessageBox.Show("Ten użytkownik ma już licencję na ten program.", "Ostrzeżenie",
+                        MessageBox.Show("This user already owns license for this software.", "Warning",
                             MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 }
 
@@ -291,15 +291,15 @@ namespace Wielowarstwowa
                 if (channel.UsunPozycje(id, typ) == WiadomoscZwrotna.Pomyslnie)
                 {
                     odswiezDane();
-                    MessageBox.Show("Usuwanie przebiegło pomyślnie.", "Informacja", MessageBoxButton.OK,
+                    MessageBox.Show("Removed successfully.", "Information", MessageBoxButton.OK,
                         MessageBoxImage.Information);
                 }
-                else MessageBox.Show("Usuwanie zakończone niepowodzeniem.", "Błąd", MessageBoxButton.OK,
+                else MessageBox.Show("Removing failed.", "Error", MessageBoxButton.OK,
                         MessageBoxImage.Error);
             }
             catch (Exception)
             {
-                MessageBox.Show("Brak ID lub błędny format", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("No ID or incorrect format", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             
         }

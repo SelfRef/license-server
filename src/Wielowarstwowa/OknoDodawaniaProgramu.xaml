@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wielowarstwowa"
         mc:Ignorable="d"
-        Title="Dodawanie programu" Height="121.094" Width="360.156" ResizeMode="NoResize" WindowStyle="ToolWindow">
+        Title="Adding software" Height="121.094" Width="360.156" ResizeMode="NoResize" WindowStyle="ToolWindow">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,10">
-            <Button x:Name="button" Content="Dodaj" Width="75" HorizontalAlignment="Right" Margin="0,0,10,0" Click="button_Click" IsDefault="True" Height="20" VerticalAlignment="Top"/>
-            <Button x:Name="button1" Content="Anuluj" Width="75" Click="button1_Click" IsCancel="True"/>
+            <Button x:Name="button" Content="Add" Width="75" HorizontalAlignment="Right" Margin="0,0,10,0" Click="button_Click" IsDefault="True" Height="20" VerticalAlignment="Top"/>
+            <Button x:Name="button1" Content="Cancel" Width="75" Click="button1_Click" IsCancel="True"/>
         </StackPanel>
-        <Label x:Name="label" Content="Nazwa:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label" Content="Name:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="nazwaBox" HorizontalAlignment="Left" Height="23" Margin="63,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256"/>
 
     </Grid>

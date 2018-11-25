@@ -25,7 +25,7 @@ namespace Wielowarstwowa
         public OknoDodawaniaUzytkownika()
         {
             InitializeComponent();
-            uprawnieniaBox.ItemsSource = Enum.GetNames(typeof (Uprawnienia)).ToList().Where(s => s != "Anonim");
+            uprawnieniaBox.ItemsSource = Enum.GetNames(typeof (Uprawnienia)).ToList().Where(s => s != "Anonymous");
             uprawnieniaBox.SelectedIndex = 0;
         }
 
@@ -41,12 +41,12 @@ namespace Wielowarstwowa
             NowyUzytkownik.Nazwisko = nazwiskoBox.Text;
             NowyUzytkownik.Login = loginBox.Text;
             Haslo = hasloBox.Password;
-            NowyUzytkownik.Uprawnienia = (uprawnieniaBox.Text == "Uzytkownik"
+            NowyUzytkownik.Uprawnienia = (uprawnieniaBox.Text == "User"
                 ? Uprawnienia.Uzytkownik
                 : Uprawnienia.Administrator);
             if (imieBox.Text.Trim() == "" || nazwiskoBox.Text.Trim() == "" || loginBox.Text.Trim() == "")
             {
-                MessageBox.Show("Pola imie, nazwisko i login muszą być wypełnione.", "Ostrzeżenie", MessageBoxButton.OK,
+                MessageBox.Show("Firstname, lastname and login field must be filled.", "Warning", MessageBoxButton.OK,
                     MessageBoxImage.Exclamation);
             }
             else Close();

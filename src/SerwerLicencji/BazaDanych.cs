@@ -14,9 +14,9 @@ namespace SerwerLicencji
     /// </summary>
     public static class BazaDanych
     {
-        private static string nazwaPlikuUzytkownikow = "uzytkownicy.json";
-        private static string nazwaPlikuProgramow = "programy.json";
-        private static string nazwaPlikuLicencji = "licencje.json";
+        private static string nazwaPlikuUzytkownikow = "users.json";
+        private static string nazwaPlikuProgramow = "software.json";
+        private static string nazwaPlikuLicencji = "licenses.json";
 
         /// <summary>
         /// Lista przechowująca obiekty reprezentujące użytkowników w bazie danych.
