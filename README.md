@@ -1,14 +1,16 @@
-* @Title: LicenseServer
-* @Author: TimsManter
-* @AuthorSite: [TimsManter.NET](http://timsmanter.net/)
-* @CreateDate: 2015-12
-* @AbandonDate: 2016-11
-* @Editor: Visual Studio Community 2015+
-* @Language: C#
-* @Framework: .NET Framework
-* @Locale: en_US
-* @License: [MIT](LICENSE.md)
-* @Status: Alpha | Abandoned | Sample
+---
+code_name: TM-S_LICENSE-SERVER_APP_NET_CSH
+create_date: 2015-12
+obsolete_date: 2016-11
+author: TM
+author_site: timsmanter.net
+editor: Visual Studio Community 2015+
+language: C#
+framework: .NET Framework
+locale: en_US
+license: MIT
+status: [Alpha, Sample]
+---
 
 # Overview
 
