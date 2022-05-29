@@ -4,7 +4,7 @@ archive_date: 2016-11
 language: C#
 framework: .NET Framework
 locale: en_US
-editor: Visual Studio Community 2015+
+editor: Visual Studio Community 2015
 license: MIT
 category: [PoC, Study, Utility, Desktop]
 dev_status: Archive
