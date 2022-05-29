@@ -1,23 +1,16 @@
 ---
-code_name: TM-S_LICENSE-SERVER_APP_NET_CSH
 create_date: 2015-12
-obsolete_date: 2016-11
-author: TM
-author_site: timsmanter.net
-editor: Visual Studio Community 2015+
+archive_date: 2016-11
 language: C#
 framework: .NET Framework
 locale: en_US
+editor: Visual Studio Community 2015+
 license: MIT
-status: [Alpha, Sample]
+category: [PoC, Study, Utility, Desktop]
+dev_status: Archive
 ---
 
-# Overview
-
-- [Overview](#overview)
-- [Quick Start](#quick-start)
-- [Screenshots](#screenshots)
-  - [More](#more)
+# Description
 
 LicenseServer is simple license management system with client-server architecture in mind. The purpose of this software is to serve central system with licenses database and provide desktop client application with ability to view, create, modify and remove licenses as well as users and registered software.
 
@@ -25,7 +18,7 @@ Client app allows users with different provileges to view own licenses. Administ
 
 The core of communication is build using SOAP transport layer protocol and Windows Communication Foundation framework - a part of .NET Framework on Windows platform. Client-side applications takes the best from Windows Presentation Foundation framework.
 
-# Quick Start
+# Setup
 
 1. Open project in Visual Studio.
 2. Right click on the Solution in Solution Explorer and click "Restore NuGet Packages".
@@ -40,7 +33,6 @@ The core of communication is build using SOAP transport layer protocol and Windo
 ![Manager Window](docs/screenshots/manager.png) | ![Server Console](docs/screenshots/console.png)
 ![Client Window Connected](docs/screenshots/client_window_software.png) | ![Client Window Connected](docs/screenshots/client_window_users.png)
 
-## More
 
 ||||
 --- | --- | ---
